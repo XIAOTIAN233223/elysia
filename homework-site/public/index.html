@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>作业发布墙</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">作业发布墙<span class="dot">.</span></div>
+    <div class="spacer"></div>
+    <button id="btnUpload" class="btn primary" type="button">＋ 发布作业</button>
+    <button id="btnNewFolder" class="btn" type="button">＋ 新建文件夹</button>
+  </header>
+
+  <main class="layout">
+    <aside class="folders">
+      <div class="folders-head">
+        <span class="title">文件夹</span>
+        <button id="btnRenameFolder" class="icon-btn" type="button" title="重命名当前文件夹">✎</button>
+      </div>
+      <div id="folderList" class="folder-list"></div>
+    </aside>
+
+    <section>
+      <div class="toolbar">
+        <h1 id="heading" class="heading">全部作业</h1>
+        <span id="count" class="count"></span>
+        <div class="spacer"></div>
+        <button id="btnRefresh" class="btn" type="button">刷新</button>
+      </div>
+      <div id="grid" class="grid"></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="/js/index.js"></script>
+</body>
+</html>

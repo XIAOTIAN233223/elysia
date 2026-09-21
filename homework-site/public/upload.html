@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>发布作业</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">作业发布墙<span class="dot">.</span></div>
+    <div class="spacer"></div>
+    <a href="/" class="btn">&larr; 返回展示页</a>
+  </header>
+
+  <main class="upload-wrap">
+    <div class="upload-card" id="formCard">
+      <h1>发布作业</h1>
+      <p class="sub">上传图片与文字说明，并选择分类文件夹。</p>
+
+      <div id="fileDrop" class="file-drop">
+        <div class="icon">🖼️</div>
+        <div>点击选择图片，或将图片拖拽到这里</div>
+        <div style="font-size:12px;margin-top:6px;">支持 jpg / png / gif / webp，最多 12 张</div>
+      </div>
+      <input id="fileInput" type="file" accept="image/*" multiple hidden />
+      <div id="previewGrid" class="preview-grid"></div>
+
+      <div style="height:14px;"></div>
+      <label class="field">
+        <label>文字说明</label>
+        <textarea id="textInput" placeholder="输入作业说明（可选）"></textarea>
+      </label>
+
+      <label class="field">
+        <label>分类文件夹</label>
+        <select id="folderSelect" style="width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fff;outline:none;"></select>
+      </label>
+
+      <div class="form-actions" style="padding-left:0;padding-right:0;">
+        <button id="btnPublish" class="btn primary" type="button">发布作业</button>
+      </div>
+    </div>
+
+    <div class="upload-card upload-success" id="successCard" hidden>
+      <div class="big">✅</div>
+      <h1>发布成功</h1>
+      <p class="sub">作业已发布到展示页。</p>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+        <button id="btnAgain" class="btn" type="button">继续发布</button>
+        <a href="/" class="btn primary">查看展示页</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="/js/upload.js"></script>
+</body>
+</html>
